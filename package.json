@@ -1,0 +1,30 @@
+{
+  "name": "chuck_timestamp_fcc",
+  "version": "1.0.0",
+  "description": "Free Code Camp Timestamp Microservice Project - Backend - By Srichakradhar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fcc",
+    "freecodecamp",
+    "timestamp",
+    "microservice",
+    "nodejs",
+    "node"
+  ],
+  "author": "srichakradhar",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srichakradhar/chuck-timestamp-ms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/srichakradhar/chuck-timestamp-ms/issues"
+  },
+  "homepage": "https://github.com/srichakradhar/chuck-timestamp-ms#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
