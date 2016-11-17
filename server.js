@@ -20,6 +20,6 @@ app.get('/:DATE_STRING', function (req, res) {
   res.send({unix: Date.parse(date), natural: naturalDate});
 });
 
-app.listen(8080, function () {
+app.listen(process.env.PORT || 8080, function () {
   console.log('Timestamp server listening on port 8080!');
 });
