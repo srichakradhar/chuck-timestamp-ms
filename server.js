@@ -1,12 +1,16 @@
 var express = require('express');
 var app = express();
 
+app.get('/', function (req, res) {
+  res.send("...Chuck's Timestamp Server...");
+});
+
 app.get('/:DATE_STRING', function (req, res) {
   var date;
-  if(isNaN(parseInt(req.params.DATE_STRING, 10))){
+  if(isNaN(Number(req.params.DATE_STRING))){ // We got a string
     date = new Date(req.params.DATE_STRING);
-  }else{
-    date = new Date(parseInt(req.params.DATE_STRING));
+  }else{                                    // We got milliseconds
+    date = new Date(Number(req.params.DATE_STRING) * 1000);
   }
   
   var dateArray, naturalDate;
@@ -17,7 +21,7 @@ app.get('/:DATE_STRING', function (req, res) {
   }else{
     naturalDate = null;
   }
-  res.send({unix: Date.parse(date), natural: naturalDate});
+  res.send({unix: Date.parse(date) / 1000, natural: naturalDate});
 });
 
 app.listen(process.env.PORT || 8080, function () {
